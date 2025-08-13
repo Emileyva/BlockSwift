@@ -5,131 +5,130 @@ const Registro: React.FC = () => {
   const [focusedField, setFocusedField] = useState<string>('');
 
   return (
-    <section className="py-20 bg-black relative overflow-hidden">
-      {/* Sombra verde desde el centro hacia abajo */}
+    <section 
+      className="py-20 relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(139.72deg, #000000 0%, rgba(84, 84, 84, 0.1) 100%)'
+      }}
+    >
+      {/* Sombra verde - círculo pegado al top, solo se ve la mitad inferior */}
       <div 
-        className="absolute left-1/2 top-1/2 transform -translate-x-1/2 w-96 h-96 md:w-[600px] md:h-[600px] opacity-30 blur-[120px] rounded-full"
+        className="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 w-[963px] h-[963px]"
         style={{
-          background: 'radial-gradient(circle, #07B7A8 0%, #07B7A800 70%)'
+          background: 'radial-gradient(circle, rgba(7, 183, 168, 0.34) 0%, rgba(7, 183, 168, 0) 70%)',
+          filter: 'blur(154px)'
         }}
       ></div>
       
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-16">
           
           {/* Lado izquierdo - Cubo galáctico */}
-          <div className="flex justify-center lg:justify-start">
+          <div className="flex-shrink-0">
             <div className="relative">
               <img 
                 src={cubo} 
                 alt="BlockSwift Galaxy Cube" 
-                className="w-80 lg:w-96 h-auto object-contain drop-shadow-2xl cube-float"
+                className="w-72 md:w-80 lg:w-96 h-auto object-contain cube-float"
               />
-              
-              {/* Efectos de partículas alrededor del cubo */}
-             
             </div>
           </div>
           
           {/* Lado derecho - Formulario */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex-shrink-0">
             <div 
-              className="w-full max-w-md p-8 rounded-3xl backdrop-blur-md"
+              className="w-full max-w-lg p-8 rounded-2xl"
               style={{
-                background: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid rgba(255, 255, 255, 0.1)'
+                background: 'rgba(40, 40, 40, 0.8)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(80, 80, 80, 0.3)'
               }}
             >
-              <h2 className="text-2xl font-bold text-white mb-8">
+              <h2 className="text-xl font-bold text-white mb-6">
                 Registrarme en el whitelist
               </h2>
               
-              <form className="space-y-6">
-                {/* Campo Nombre */}
-                <div>
-                  <label 
-                    className={`block text-sm font-medium mb-2 transition-colors duration-300 ${
-                      focusedField === 'nombre' ? 'text-[#07B7A8]' : 'text-white'
-                    }`}
-                  >
-                    Nombre
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Agregar Nombre"
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#07B7A8] focus:bg-gray-800/70 transition-all duration-300"
-                    onFocus={() => setFocusedField('nombre')}
-                    onBlur={() => setFocusedField('')}
-                  />
+              <form className="space-y-4">
+                {/* Fila Nombre y Apellido */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label 
+                      className={`block text-xs font-medium mb-1 transition-colors duration-300 ${
+                        focusedField === 'nombre' ? 'text-[#5B47CE]' : 'text-gray-400'
+                      }`}
+                    >
+                      Nombre
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Agregar Nombre"
+                      className="w-full px-3 py-2.5 bg-gray-700/80 border-0 rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#5B47CE] transition-all duration-300"
+                      onFocus={() => setFocusedField('nombre')}
+                      onBlur={() => setFocusedField('')}
+                    />
+                  </div>
+                  
+                  <div>
+                    <label 
+                      className={`block text-xs font-medium mb-1 transition-colors duration-300 ${
+                        focusedField === 'apellido' ? 'text-[#5B47CE]' : 'text-gray-400'
+                      }`}
+                    >
+                      Apellido
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Apellido"
+                      className="w-full px-3 py-2.5 bg-gray-700/80 border-0 rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#5B47CE] transition-all duration-300"
+                      onFocus={() => setFocusedField('apellido')}
+                      onBlur={() => setFocusedField('')}
+                    />
+                  </div>
                 </div>
 
-                {/* Campo Apellido */}
-                <div>
-                  <label 
-                    className={`block text-sm font-medium mb-2 transition-colors duration-300 ${
-                      focusedField === 'apellido' ? 'text-[#07B7A8]' : 'text-white'
-                    }`}
-                  >
-                    Apellido
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Apellido"
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#07B7A8] focus:bg-gray-800/70 transition-all duration-300"
-                    onFocus={() => setFocusedField('apellido')}
-                    onBlur={() => setFocusedField('')}
-                  />
-                </div>
-
-                {/* Campo Email */}
-                <div>
-                  <label 
-                    className={`block text-sm font-medium mb-2 transition-colors duration-300 ${
-                      focusedField === 'email' ? 'text-[#07B7A8]' : 'text-white'
-                    }`}
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#07B7A8] focus:bg-gray-800/70 transition-all duration-300"
-                    onFocus={() => setFocusedField('email')}
-                    onBlur={() => setFocusedField('')}
-                  />
-                </div>
-
-                {/* Campo Teléfono */}
-                <div>
-                  <label 
-                    className={`block text-sm font-medium mb-2 transition-colors duration-300 ${
-                      focusedField === 'telefono' ? 'text-[#07B7A8]' : 'text-white'
-                    }`}
-                  >
-                    Teléfono
-                  </label>
-                  <input
-                    type="tel"
-                    placeholder="012"
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#07B7A8] focus:bg-gray-800/70 transition-all duration-300"
-                    onFocus={() => setFocusedField('telefono')}
-                    onBlur={() => setFocusedField('')}
-                  />
+                {/* Fila Email y Teléfono */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label 
+                      className={`block text-xs font-medium mb-1 transition-colors duration-300 ${
+                        focusedField === 'email' ? 'text-[#5B47CE]' : 'text-gray-400'
+                      }`}
+                    >
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      className="w-full px-3 py-2.5 bg-gray-700/80 border-0 rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#5B47CE] transition-all duration-300"
+                      onFocus={() => setFocusedField('email')}
+                      onBlur={() => setFocusedField('')}
+                    />
+                  </div>
+                  
+                  <div>
+                    <label 
+                      className={`block text-xs font-medium mb-1 transition-colors duration-300 ${
+                        focusedField === 'telefono' ? 'text-[#5B47CE]' : 'text-gray-400'
+                      }`}
+                    >
+                      Teléfono
+                    </label>
+                    <input
+                      type="tel"
+                      placeholder="012"
+                      defaultValue="012"
+                      className="w-full px-3 py-2.5 bg-gray-700/80 border-0 rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#5B47CE] transition-all duration-300"
+                      onFocus={() => setFocusedField('telefono')}
+                      onBlur={() => setFocusedField('')}
+                    />
+                  </div>
                 </div>
 
                 {/* Campo Mensaje */}
                 <div>
-                  <label 
-                    className={`block text-sm font-medium mb-2 transition-colors duration-300 ${
-                      focusedField === 'mensaje' ? 'text-[#07B7A8]' : 'text-white'
-                    }`}
-                  >
-                    Mensaje
-                  </label>
                   <textarea
                     placeholder="Explica Qué Es Lo Que Te Interesa Del Proyecto"
-                    rows={4}
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-[#07B7A8] focus:bg-gray-800/70 transition-all duration-300 resize-none"
+                    rows={3}
+                    className="w-full px-3 py-2.5 bg-gray-700/80 border-0 rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:ring-2  transition-all duration-300 resize-none"
                     onFocus={() => setFocusedField('mensaje')}
                     onBlur={() => setFocusedField('')}
                   />
@@ -138,7 +137,7 @@ const Registro: React.FC = () => {
                 {/* Botón Enviar */}
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-xl font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                  className="w-full py-3 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105 mt-6"
                   style={{ backgroundColor: '#7835FF' }}
                 >
                   Enviar
@@ -152,7 +151,7 @@ const Registro: React.FC = () => {
       {/* Estilos CSS para la animación del cubo */}
       <style>{`
         .cube-float {
-          animation: float-cube 4s ease-in-out infinite;
+          animation: float-cube 6s ease-in-out infinite;
         }
 
         @keyframes float-cube {
@@ -160,7 +159,7 @@ const Registro: React.FC = () => {
             transform: translateY(0px);
           }
           50% {
-            transform: translateY(-15px);
+            transform: translateY(-20px);
           }
         }
       `}</style>
