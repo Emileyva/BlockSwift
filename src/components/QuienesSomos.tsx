@@ -59,7 +59,9 @@ const QuienesSomos: React.FC = () => {
       {/* Inyectar estilos CSS */}
       <style>{styles}</style>
       
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-black relative overflow-hidden">
+      {/* Elemento decorativo abajo a la derecha */}
+      <div className="absolute w-60 h-60 md:w-80 md:h-80 -right-6 md:-right-12 bottom-10 md:bottom-0 bg-gradient-to-r from-purple-400 to-purple-600 opacity-25 blur-[100px] md:blur-[155px] rounded-full"></div>
       <div className="max-w-7xl mx-auto px-6">
         {/* Content Container with Background */}
         <div 
