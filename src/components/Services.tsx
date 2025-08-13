@@ -4,37 +4,37 @@ const Services: React.FC = () => {
   const certifications = [
     {
       name: 'OFAC',
-      logo: '/logos/ofac.svg',
+      logo: '/logos/OFAC.png',
       alt: 'Office of Foreign Assets Control'
     },
     {
       name: 'ASFI',
-      logo: '/logos/asfi.svg',
+      logo: '/logos/asfi.png',
       alt: 'Autoridad de Supervisión del Sistema Financiero'
     },
     {
       name: 'UIF',
-      logo: '/logos/uif.svg',
+      logo: '/logos/uif.png',
       alt: 'Unidad de Investigaciones Financieras'
     },
     {
       name: 'CMF',
-      logo: '/logos/cmf.svg',
+      logo: '/logos/mf.png',
       alt: 'Comisión para el Mercado Financiero'
     },
     {
       name: 'UAF',
-      logo: '/logos/uaf.svg',
+      logo: '/logos/uaf.png',
       alt: 'Unidad de Análisis Financiero'
     },
     {
       name: 'AML',
-      logo: '/logos/aml.svg',
+      logo: '/logos/aml.png',
       alt: 'Anti-Money Laundering'
     },
     {
       name: 'SUMSUB',
-      logo: '/logos/sumsub.svg',
+      logo: '/logos/sumsub.png',
       alt: 'Sumsub Identity Verification'
     }
   ];
