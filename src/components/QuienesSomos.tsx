@@ -2,9 +2,64 @@ import React from 'react';
 import cubo from '../assets/imagenes/cubo.png';
 import quienesSomosBg from '../assets/imagenes/fondos/quienesSomos.png';
 
+// Estilos CSS para las animaciones personalizadas
+const styles = `
+  @keyframes float-cube {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+  @keyframes orbit-1 {
+    0% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(8px, -8px) scale(1.05); }
+    50% { transform: translate(12px, 0) scale(1); }
+    75% { transform: translate(4px, 8px) scale(0.95); }
+    100% { transform: translate(0, 0) scale(1); }
+  }
+
+  @keyframes orbit-2 {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-10px, -6px) scale(1.1); }
+    66% { transform: translate(-6px, 10px) scale(0.9); }
+    100% { transform: translate(0, 0) scale(1); }
+  }
+
+  @keyframes orbit-3 {
+    0% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(6px, -10px) scale(1.02); }
+    50% { transform: translate(-4px, -8px) scale(0.98); }
+    75% { transform: translate(-8px, 6px) scale(1.05); }
+    100% { transform: translate(0, 0) scale(1); }
+  }
+
+  .cube-float {
+    animation: float-cube 4s ease-in-out infinite;
+  }
+
+  .sphere-1 {
+    animation: orbit-1 12s ease-in-out infinite;
+  }
+
+  .sphere-2 {
+    animation: orbit-2 15s ease-in-out infinite reverse;
+  }
+
+  .sphere-3 {
+    animation: orbit-3 10s ease-in-out infinite;
+  }
+`;
+
 const QuienesSomos: React.FC = () => {
   return (
-    <section className="py-20 bg-black">
+    <>
+      {/* Inyectar estilos CSS */}
+      <style>{styles}</style>
+      
+      <section className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-6">
         {/* Content Container with Background */}
         <div 
@@ -57,19 +112,20 @@ const QuienesSomos: React.FC = () => {
                 <img 
                   src={cubo} 
                   alt="BlockSwift Technology" 
-                  className="w-80 lg:w-96 h-auto object-contain drop-shadow-2xl animate-bounce-slow"
+                  className="w-80 lg:w-96 h-auto object-contain drop-shadow-2xl cube-float"
                 />
                 
                 {/* Decorative elements with movement */}
-                <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full opacity-80 animate-orbit-1"></div>
-                <div className="absolute -bottom-6 -right-6 w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-80 animate-orbit-2"></div>
-                <div className="absolute top-1/2 -left-8 w-4 h-4 bg-gradient-to-r from-green-400 to-cyan-400 rounded-full opacity-80 animate-orbit-3"></div>
+                <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full opacity-80 sphere-1"></div>
+                <div className="absolute -bottom-6 -right-6 w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-80 sphere-2"></div>
+                <div className="absolute top-1/2 -left-8 w-4 h-4 bg-gradient-to-r from-green-400 to-cyan-400 rounded-full opacity-80 sphere-3"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    </>
   );
 };
 
