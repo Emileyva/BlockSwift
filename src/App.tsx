@@ -3,6 +3,8 @@ import Services from './components/Services'
 import Caracteristicas from './components/Caracteristicas'
 import QuienesSomos from './components/QuienesSomos'
 import ComoFunciona from './components/ComoFunciona'
+
+import Registro from './components/Registro'
 import Footer from './components/Footer'
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
       <Caracteristicas />
       <QuienesSomos />
       <ComoFunciona />
+      <Registro />
       <Footer />
     </div>
   )
