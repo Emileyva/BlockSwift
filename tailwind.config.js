@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+z
 export default {
   content: [
     "./index.html",
@@ -39,6 +39,10 @@ export default {
       animation: {
         'float': 'float 6s ease-in-out infinite',
         'sparkle': 'sparkle 20s linear infinite',
+        'bounce-slow': 'bounce-slow 3s ease-in-out infinite',
+        'orbit-1': 'orbit-1 8s ease-in-out infinite',
+        'orbit-2': 'orbit-2 10s ease-in-out infinite reverse',
+        'orbit-3': 'orbit-3 6s ease-in-out infinite',
       },
       keyframes: {
         float: {
@@ -50,6 +54,37 @@ export default {
         sparkle: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-100px)' },
+        },
+        'bounce-slow': {
+          '0%, 100%': { 
+            transform: 'translateY(0px) rotateY(0deg)',
+            animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
+          },
+          '50%': { 
+            transform: 'translateY(-25px) rotateY(180deg)',
+            animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
+          }
+        },
+        'orbit-1': {
+          '0%': { transform: 'translate(0, 0) scale(1)' },
+          '25%': { transform: 'translate(20px, -20px) scale(1.2)' },
+          '50%': { transform: 'translate(40px, 0) scale(1)' },
+          '75%': { transform: 'translate(20px, 20px) scale(0.8)' },
+          '100%': { transform: 'translate(0, 0) scale(1)' }
+        },
+        'orbit-2': {
+          '0%': { transform: 'translate(0, 0) scale(1) rotate(0deg)' },
+          '33%': { transform: 'translate(-30px, -15px) scale(1.3) rotate(120deg)' },
+          '66%': { transform: 'translate(-15px, 30px) scale(0.7) rotate(240deg)' },
+          '100%': { transform: 'translate(0, 0) scale(1) rotate(360deg)' }
+        },
+        'orbit-3': {
+          '0%': { transform: 'translate(0, 0) scale(1)' },
+          '20%': { transform: 'translate(15px, -25px) scale(1.1)' },
+          '40%': { transform: 'translate(-10px, -30px) scale(0.9)' },
+          '60%': { transform: 'translate(-25px, 10px) scale(1.2)' },
+          '80%': { transform: 'translate(10px, 25px) scale(0.8)' },
+          '100%': { transform: 'translate(0, 0) scale(1)' }
         }
       },
       backdropBlur: {
