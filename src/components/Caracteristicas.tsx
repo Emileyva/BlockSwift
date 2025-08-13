@@ -5,7 +5,7 @@ import rayo from '../assets/imagenes/rayo.png';
 
 const Caracteristicas: React.FC = () => {
   return (
-    <section className="pb-20 bg-black">
+    <section id="caracteristicas" className="pb-20 bg-black">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">

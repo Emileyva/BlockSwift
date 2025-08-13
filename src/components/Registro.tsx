@@ -6,6 +6,7 @@ const Registro: React.FC = () => {
 
   return (
     <section 
+      id="registro"
       className="py-20 relative overflow-hidden"
       style={{
         background: 'linear-gradient(139.72deg, #000000 0%, rgba(84, 84, 84, 0.1) 100%)'

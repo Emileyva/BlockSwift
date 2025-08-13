@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden" style={{
+    <section id="hero" className="relative min-h-screen flex flex-col overflow-hidden" style={{
       backgroundImage: `url(${heroBackground})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',

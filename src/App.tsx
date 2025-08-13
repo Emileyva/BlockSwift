@@ -4,6 +4,7 @@ import Caracteristicas from './components/Caracteristicas'
 import QuienesSomos from './components/QuienesSomos'
 import ComoFunciona from './components/ComoFunciona'
 import QueOfrecemos from './components/QueOfrecemos'
+import Proximamente from './components/Proximamente'
 import Registro from './components/Registro'
 import Footer from './components/Footer'
 
@@ -16,6 +17,7 @@ function App() {
       <QuienesSomos />
       <ComoFunciona />
       <QueOfrecemos />
+      <Proximamente />
       <Registro />
       <Footer />
     </div>

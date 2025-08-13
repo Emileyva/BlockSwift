@@ -8,7 +8,7 @@ export default function Navbar() {
     <nav className="fixed top-6 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-10 rounded-full border border-white/20 backdrop-blur-md md:mx-12 p-4">
       {/* Logo */}
       <div className="flex items-center">
-        <a href="#inicio" className="flex items-center">
+        <a href="#hero" className="flex items-center">
           <img src={icon} alt="BlockSwift" className="h-5 md:h-16 w-auto" />
         </a>
       </div>
@@ -41,10 +41,46 @@ export default function Navbar() {
 
       {/* Menú desplegable */}
       {menuOpen && (
-        <div className="absolute top-20 left-4 right-4 bg-[#1c0b0b] text-white rounded-xl shadow-lg p-6 border border-white/10 backdrop-blur-sm">
-          <button className="w-full bg-[#7835FF] text-white px-4 py-3 rounded-full font-semibold">
-            Comenzar
-          </button>
+        <div className="absolute top-20 right-4 w-80 bg-[#1c0b0b] text-white rounded-xl shadow-lg p-6 border border-white/10 backdrop-blur-sm">
+          <div className="space-y-3">
+            <a 
+              href="#caracteristicas" 
+              className="block text-white hover:text-purple-300 transition py-2 font-medium"
+              onClick={() => setMenuOpen(false)}
+            >
+              Características
+            </a>
+            <a 
+              href="#quienes-somos" 
+              className="block text-white hover:text-purple-300 transition py-2 font-medium"
+              onClick={() => setMenuOpen(false)}
+            >
+              ¿Quiénes somos?
+            </a>
+            <a 
+              href="#como-funciona" 
+              className="block text-white hover:text-purple-300 transition py-2 font-medium"
+              onClick={() => setMenuOpen(false)}
+            >
+              ¿Cómo funciona?
+            </a>
+            <a 
+              href="#que-ofrecemos" 
+              className="block text-white hover:text-purple-300 transition py-2 font-medium"
+              onClick={() => setMenuOpen(false)}
+            >
+              ¿Qué Ofrecemos?
+            </a>
+            <div className="pt-3 border-t border-white/10">
+              <a 
+                href="#registro" 
+                className="block w-full bg-[#7835FF] text-white px-4 py-3 rounded-full font-semibold text-center hover:opacity-90 transition"
+                onClick={() => setMenuOpen(false)}
+              >
+                Registro
+              </a>
+            </div>
+          </div>
         </div>
       )}
     </nav>

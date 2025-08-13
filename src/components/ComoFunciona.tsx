@@ -5,6 +5,7 @@ import comoFuncionaBg from '../assets/imagenes/fondos/comoFunciona.png';
 const ComoFunciona: React.FC = () => {
   return (
     <section 
+      id="como-funciona"
       className="py-20 bg-black relative overflow-hidden"
     >
       {/* Sombras decorativas */}
